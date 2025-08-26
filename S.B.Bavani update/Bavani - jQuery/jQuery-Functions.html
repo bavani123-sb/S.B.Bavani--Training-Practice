@@ -6,9 +6,47 @@
 <body>
 <center>
 <h1 id="title">Welcome to Selector Practice</h1>
-EmailId:</label><input type="text" id="txtEmailId" class="text-input"/><br><br>
-Password:</label> <input type="text" id="txtPassword" class="text-input"/><br><br>
-<input type="button" id="btn"value="Login" onclick="validateFields()"/> 
+<label id="lblEmailId">EmailId:</label><input type="text" id="txtEmailId" class="text-input"/><br><br>
+<label id="lblPassword"> Password:</label> <input type="text" id="txtPassword" class="text-input"/><br><br>
+<label id="lblbtn"></label><input type="button" id="btn"value="Login" onclick="validateFields()"/> 
 </center>
+<hr>
+<script>
+$("#title").html("<b style='color:Blue;'>Welcome to Gmail</b>")
+$("#lblbtn").html("<b style='color:red;'>Click</b>")
+$("#btn").css("border","1px solid brown")
+$("#btn").css("color","green")
+$("input[type='button']").css("font-weight","bold")
+$("#lblEmailId").text("Enter Your EmailId")
+$("#lblPassword").text("Enter Your Password")
+$("#txtPassword").attr("type","password");
+$("#txtEmailId").removeAttr("class")
+$("#txtPassword").removeAttr("class")
+$("#txtEmailId").css("border","2px solid brown")
+$("#txtPassword").css("border","2px solid brown") 
+function validateFields(){
+            if ($("#txtEmailId").val() == "")
+			{
+                $("#lblEmailId").css("color", "red");
+				$("#lblEmailId").css("font-weight","bold")
+            } else 
+			{
+                $("#lblEmailId").css("color", "green");
+				$("#lblEmailId").css("font-weight","bold")
+
+            }
+            if ($("#txtPassword").val() == "")
+			{
+                $("#lblPassword").css("color", "red");
+				$("#lblPassword").css("font-weight","bold")
+
+            } else {
+                $("#lblPassword").css("color", "green");
+				$("#lblPassword").css("font-weight","bold")
+
+            }   
+}
+
+</script>
 </body>
 </html>
