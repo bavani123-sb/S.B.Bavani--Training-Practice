@@ -5,9 +5,20 @@
 </head>
 <body>
 <center>
+<style>
+.text-input
+{
+font-size:20px;
+}
+.font
+{
+font-size:26px;
+font-style:italic;
+}
+</style>
 <h1 id="title">Welcome to Selector Practice</h1>
-<label id="lblEmailId">EmailId:</label><input type="text" id="txtEmailId" class="text-input"/><br><br>
-<label id="lblPassword"> Password:</label> <input type="text" id="txtPassword" class="text-input"/><br><br>
+<label id="lblEmailId" class="font">EmailId:</label><input type="text" id="txtEmailId" class="text-input"/><br><br>
+<label id="lblPassword" class="font"> Password:</label> <input type="text" id="txtPassword" class="text-input"/><br><br>
 <label id="lblbtn"></label><input type="button" id="btn"value="Login" onclick="validateFields()"/> 
 </center>
 <hr>
@@ -20,23 +31,14 @@ $("input[type='button']").css("font-weight","bold")
 $("#lblEmailId").text("Enter Your EmailId")	
 $("#lblPassword").text("Enter Your Password")
 $("#txtPassword").attr("type","password");
-$("#txtEmailId").removeAttr("class")
-$("#txtPassword").removeAttr("class")
 $("#txtEmailId").css("border","2px solid brown")
 $("#txtPassword").css("border","2px solid brown") 
-$("#lblEmailId").css("font-size","20px")
-$("#lblPassword").css("font-size","22px")
-$("#lblbtn").css("font-size","22px")
 $("#title").css("font-size","42px")
 $("#btn").css("font-size","20px")
-$("#lblEmailId").css("font-style","italic")
-$("#lblPassword").css("font-style","italic")
-$("#lblPassword").css("font-style","italic")
+$("#lblbtn").css("font-size","26px")
 $("#lblbtn").css("font-style","italic")
 $("#btn").css("font-style","italic")
-
-
-
+$("#title").css("font-style","italic")
 function validateFields(){
             if ($("#txtEmailId").val() == "")
 			{
