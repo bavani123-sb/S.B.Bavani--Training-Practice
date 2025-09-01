@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+Enter your Number:<input type="text" id="txtnum"/>
+<label id="msg" style="color:red;"></label><br><br>
+<input type="button" id="btn" value="Add" onclick="validateFields()"/>
+<label id="msg" style="color:red;"></label>
+<br><br>
+<table>
+<tr>
+<th>Index</th>
+<th>Value</th>
+</tr>
+<tbody id="table"></tbody>
+</table>
+<script>
+var numbers = [];  
+var index = 0;
+function validateFields()
+{
+ var val = $("#txtnum").val();
+if(val == "")
+{       
+  $("#msg").text("Please enter your number");
+}
+else
+{
+   $("#msg").text(""); 
+   numbers.push(val);  
+   $("#table").append("<tr><td>"+index+"</td><td>"+val+"</td></tr>");
+   index++;              
+   $("#txtnum").val(" "); 
+ }
+}
+</script>
+</body>
+</html>
