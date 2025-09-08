@@ -4,36 +4,72 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-Enter your Number:<input type="text" id="txtnum"/>
-<label id="msg" style="color:red;"></label><br><br>
-<input type="button" id="btn" value="Add" onclick="validateFields()"/>
-<label id="msg" style="color:red;"></label>
+Enter your Number:<input type="text" id="txtnumber" /><br><br>
+<input type="button" id="addbtn" value="Add" onclick="addedFields()" />
+<input type="button" id="updatebtn" value="Update" onclick="updateFields()" style="display:none;" />
+<label id="message" style="color:red;" ></label>
 <br><br>
-<table>
+<table border="1">
 <tr>
-<th>Index</th>
-<th>Value</th>
+<th>index</th>
+<th>Values</th>
+<th>Action</th>
 </tr>
-<tbody id="table"></tbody>
+<tbody id="OutputTable" </tbody>
 </table>
 <script>
-var numbers = [];  
-var index = 0;
-function validateFields()
+var index=0;
+var NumberList=[];
+var EditIndex=null;
+function addedFields()
 {
- var val = $("#txtnum").val();
+var val=$("#txtnumber").val();
 if(val == "")
-{       
-  $("#msg").text("Please enter your number");
-}
-else
 {
-   $("#msg").text(""); 
-   numbers.push(val);  
-   $("#table").append("<tr><td>"+index+"</td><td>"+val+"</td></tr>");
-   index++;              
-   $("#txtnum").val(" "); 
- }
+$("#message").text("Please Enetr Your Number");
+}
+else{
+$("#message").val("");
+NumberList.push(val)
+refreshTable();
+$("#txtnumber").val("");
+}
+}
+function refreshTable()
+{
+$("#OutputTable").empty();
+for(index=0;index<NumberList.length;index++){
+$("#OutputTable").append("<tr><td>" + index + "</td><td>" + NumberList[index] + "</td>" +
+ "<td><input type='button' value='Edit' onclick='editNumber(" + index + ")'/> " +
+ "<input type='button' value='Delete' onclick='deleteNumber(" + index + ")'/></td></tr>");
+}
+}
+function editNumber(index){
+EditIndex=index
+$("#txtnumber").val(NumberList[index]);
+$("#addbtn").hide();
+$("#updatebtn").show();
+$("#txtnumer").Val("");
+}
+function updateFields(){
+var val=$("#txtnumber").val();
+if(val == "")
+{
+$("#message").text("Please Enter your Update Value");
+}
+else{
+$("#message").text("");
+NumberList[EditIndex]=val;
+EditIndex=null;
+refreshTable();
+$("#addbtn").show();
+$("#updatebtn").hide();
+$("#txtnumber").val("");
+}
+}
+function deleteNumber(index){
+NumberList.splice(index,1)
+refreshTable();
 }
 </script>
 </body>
