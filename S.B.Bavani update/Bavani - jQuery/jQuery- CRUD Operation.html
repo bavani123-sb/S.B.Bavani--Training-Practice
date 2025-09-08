@@ -39,17 +39,17 @@ function refreshTable()
 {
 $("#OutputTable").empty();
 for(index=0;index<NumberList.length;index++){
-$("#OutputTable").append("<tr><td>" + index + "</td><td>" + NumberList[index] + "</td>" +
+$("#OutputTable").append("<tr><td>" +( index+1) + "</td><td>" + NumberList[index] + "</td>" +
  "<td><input type='button' value='Edit' onclick='editNumber(" + index + ")'/> " +
  "<input type='button' value='Delete' onclick='deleteNumber(" + index + ")'/></td></tr>");
 }
 }
 function editNumber(index){
-EditIndex=index
 $("#txtnumber").val(NumberList[index]);
 $("#addbtn").hide();
 $("#updatebtn").show();
-$("#txtnumer").Val("");
+EditIndex=index
+
 }
 function updateFields(){
 var val=$("#txtnumber").val();
@@ -61,10 +61,12 @@ else{
 $("#message").text("");
 NumberList[EditIndex]=val;
 EditIndex=null;
-refreshTable();
 $("#addbtn").show();
 $("#updatebtn").hide();
+refreshTable();
 $("#txtnumber").val("");
+
+
 }
 }
 function deleteNumber(index){
