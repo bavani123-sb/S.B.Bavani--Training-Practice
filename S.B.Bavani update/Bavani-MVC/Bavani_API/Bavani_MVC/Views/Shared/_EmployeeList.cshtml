@@ -1,0 +1,25 @@
+﻿@model List<EmployeeInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    for (int i = 0; i < Model.Count; i++)
+    {
+        <tr>
+            <td>
+                @Model[i].Name
+                <br />
+            </td>
+            <td>
+                @Model[i].Position
+                <br />
+            </td>
+        </tr>
+
+    }
+}
+else
+{
+    <tr>
+        <td>No employees found</td>
+    </tr>
+}
