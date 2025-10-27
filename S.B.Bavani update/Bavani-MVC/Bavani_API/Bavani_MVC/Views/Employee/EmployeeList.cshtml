@@ -1,0 +1,21 @@
+﻿@model List<EmployeeInfo>
+
+<h1>Employee List</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody id="employeeTableBody">
+        @{
+            @await Html.PartialAsync("~/Views/Shared/_EmployeeList.cshtml", Model)
+
+        }
+    </tbody>
+   
+</table>
+
+<br />
+<a href="Views/Employee/EmployeeForm">Back to Form</a>

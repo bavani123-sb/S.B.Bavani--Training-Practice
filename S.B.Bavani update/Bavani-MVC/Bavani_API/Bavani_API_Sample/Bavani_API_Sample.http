@@ -1,0 +1,6 @@
+@Bavani_API_Sample_HostAddress = http://localhost:5089
+
+GET {{Bavani_API_Sample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

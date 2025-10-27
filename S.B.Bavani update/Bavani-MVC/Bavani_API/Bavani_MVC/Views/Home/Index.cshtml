@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    label.error {
+        color: red;
+        display: none;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    input {
+        margin: 5px 0;
+        padding: 5px;
+    }
+
+    #msg {
+        font-weight: bold;
+    }
+</style>
+
+<h2>Simple Login Form</h2>
+
+<label>Username:</label>
+<br>
+<input type="text" id="txtUsername">
+<br>
+<label id="userErrorMsg" class="error" style="display:none;">Enter Username</label>
+<br>
+<br>
+
+<label>Password:</label>
+<br>
+<input type="password" id="txtPassword">
+<br>
+<label id="passErrorMsg" class="error" style="display:none;">Enter Password</label>
+<br>
+<br>
+
+<input type="button" id="loginBtn" value="Login" onclick="loginUser()">
+<input type="button" id="clearBtn" value="Clear" onclick="clearField()">
+<br>
+<br>
+
+<p id="msg"></p>
+<script src="~/js/Login.js"></script>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <
